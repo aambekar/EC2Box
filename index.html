@@ -1,71 +1,404 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Ec2box by skavanagh</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="A web-based SSH console to execute commands and manage multiple EC2 instances simultaneously running on Amazon Web Services (AWS)."/>
+    <meta name="keywords"
+          content="Web-based, ssh, EC2, AWS, Amazon Web Services, multi-terminal, terminal, ssh-keygen, management"/>
+    <meta name="author" content="Sean Kavanagh">
+    <link rel="shortcut icon" href="img/keybox.ico">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>EC2Box</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/keybox.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/libs/html5shiv.js"></script>
+    <script src="js/libs/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Ec2box</h1>
-        <p>A web-based SSH console to execute commands and manage multiple EC2 instances simultaneously running on Amazon Web Services (AWS).</p>
 
-        <p class="view"><a href="https://github.com/skavanagh/EC2Box">View the Project on GitHub <small>skavanagh/EC2Box</small></a></p>
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+
+    <style>
+        .carousel-caption {
+            text-align: left;
+        }
+
+    </style>
+</head>
+<!-- NAVBAR
+================================================== -->
+<body>
+<div class="navbar-wrapper">
+    <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand">
+                        <div class="nav-img"><img src="img/keybox_50x38.png"/></div>
+                        EC2Box
+                    </div>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#setup">Setup</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#see_more">See More</a></li>
+                    </ul>
+                    <div class="navbar-collapse collapse navbar-right">
+                        <ul class="nav navbar-nav" style="vertical-align: middle">
+                            <li>
+                                <iframe src="http://ghbtns.com/github-btn.html?user=skavanagh&repo=EC2Box&type=watch"
+                                        height="30" width="70" frameborder="0" scrolling="0"
+                                        style="width:70px; height: 30px;" allowTransparency="true"></iframe>
+                            </li>
 
 
-        <ul>
-          <li><a href="https://github.com/skavanagh/EC2Box/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/skavanagh/EC2Box/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/skavanagh/EC2Box">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+                            <li>
+                                <iframe src="http://ghbtns.com/github-btn.html?user=skavanagh&repo=EC2Box&type=fork"
+                                        height="30" width="70" frameborder="0" scrolling="0"
+                                        style="width:70px; height: 30px;" allowTransparency="true"></iframe>
+                            </li>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+                            <li>
+                                <iframe src="http://ghbtns.com/github-btn.html?user=skavanagh&type=follow" height="30"
+                                        width="168" frameborder="0" scrolling="0" style="width:168px; height: 30px;"
+                                        allowTransparency="true"></iframe>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+            </div>
+        </div>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/skavanagh">skavanagh</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+</div>
+
+
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="img/1500x550/select_terminal_windows.png" alt="Composite SSH Terminals">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1><b>Composite SSH Terminals</b></h1>
+
+                    <p>Manage multiple SSH session simultaneously on multiple instances.</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="#terms" role="button">Learn More</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="img/1500x550/manage_users.png" alt="Control User Access">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1><b>Control User Access</b></h1>
+
+                    <p>Manage users and audit the activity of users from a single location.</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="#access" role="button">Learn More</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="img/1500x550/set_aws_key.png" alt="Import EC2 Keys">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1><b>Import EC2 Keys</b></h1>
+
+                    <p>Register your EC2 keys and automatically connect with associated instances.</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="#import_keys" role="button">Learn More</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="img/1500x550/push_files.png" alt="Upload &amp; Push Files">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1><b>Upload &amp; Push Files</b></h1>
+
+                    <p>Upload files with ease to selected EC2 instances</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="#upload" role="button">Learn More</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span
+            class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next"><span
+            class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+<!-- /.carousel -->
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+
+<div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+
+    <div class="row">
+        <div class="col-lg-4">
+
+
+            <h2>EC2Box</h2>
+
+            <p>A web-based SSH console to execute commands and manage multiple EC2 instances simultaneously running on
+                Amazon Web Services (AWS). </p>
+
+            <p><a class="btn btn-primary" href="javascript:window.open('https://github.com/skavanagh/EC2Box');"
+                  role="button">View on Github &raquo;</a></p>
+
+
+        </div>
+
+        <div class="col-lg-4">
+            <a name="setup"></a>
+
+            <h2>Easy Setup</h2>
+
+            <p>Requires JDK 1.7 or greater<br/>A web socket supported browser</p>
+
+            <p><a class="btn btn-primary" href="javascript:window.open('https://github.com/skavanagh/EC2Box#ec2box');"
+                  role="button">View README &raquo;</a></p>
+        </div>
+
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <a name="contact"></a>
+
+            <h2>Contact</h2>
+
+            <p>Do you have questions or ideas?<br/>Feel free to reach out. </p>
+
+            <p>
+                <a class="btn btn-primary" href="javascript:window.open('https://twitter.com/spkavanagh6');"
+                   role="button">Twitter</a>
+                <a class="btn btn-primary" href="mailto:sean.p.kavanagh6@gmail.com" role="button">Email</a></p>
+        </div>
+
+
+    </div>
+    <!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7">
+            <a name="about"></a>
+
+            <h2 class="featurette-heading">About EC2Box</h2>
+
+            <p class="lead">A web-based ssh console to execute commands and manage multiple EC2 instances simultaneously
+                running on Amazon Web Services (AWS). EC2Box allows you to share terminal commands and upload files to
+                all your EC2 instances. Once the sessions have been opened you can select a single EC2 instance or any
+                combination to run your commands. Also, additional instance administrators can be added and their
+                terminal sessions and history can be audited.</p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" data-src="img/500x500/terminals.png/500x500/auto"
+                 src="img/500x500/terminals.png" alt="Composite SSH Terminals"/></img>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <a name="terms"></a>
+
+        <div class="col-md-7" style="float:right;">
+            <h2 class="featurette-heading">Composite SSH terminals. <span class="text-muted">Total control.</span></h2>
+
+            <p class="lead">Execute commands on multiple instances simultaneously. Upload files to selected instances.
+                Once
+                the sessions have been opened you can select a single instance or any combination to run your
+                commands. </p>
+
+        </div>
+
+        <div class="col-md-5" style="float:left;">
+            <img class="featurette-image img-responsive" data-src="img/500x500/select_terminal_windows.png/500x500/auto"
+                 src="img/500x500/select_terminal_windows.png" alt="Select Invidual Terminals"/></img>
+        </div>
+    </div>
+
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7">
+            <a name="access"></a>
+
+            <h2 class="featurette-heading">Control user access. <span class="text-muted">Secure your instances.</span>
+            </h2>
+
+            <p class="lead">Create users with limited privileges and audit their administrative activities.</p>
+
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" data-src="img/500x500/manage_users.png/500x500/auto"
+                 src="img/500x500/manage_users.png" alt="Manage Users"/></img>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7" style="float:right;">
+            <a name="import_keys"></a>
+
+            <h2 class="featurette-heading">Import EC2 Keys</h2>
+
+            <p class="lead">Once you have registered your EC2 SSH key, all instances associated with the key will show
+                on the 'Composite SSH Terminal' screen. Instances will only show if the key assocated with the instance
+                has been imported.</p>
+
+        </div>
+        <div class="col-md-5" style="float:left;">
+            <img class="featurette-image img-responsive" data-src="img/500x500/set_aws_key.png/500x500/auto"
+                 src="img/500x500/set_aws_key.png" alt="Import EC2 Keys"/></img>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7">
+            <a name="upload"></a>
+
+            <h2 class="featurette-heading">Upload &amp; Push Files</h2>
+
+            <p class="lead">Upload files with ease to selected EC2 instances. Files can be uploaded to all instances or
+                any combination of instances.</p>
+
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" data-src="img/500x500/push_files.png/500x500/auto"
+                 src="img/500x500/push_files.png" alt="Audit SSH Sessions"/></img>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <a name="see_more"></a>
+
+        <div class="col-md-7" style="float:right;">
+
+            <h2 class="featurette-heading">See More: KeyBox</h2>
+
+            <h3>Not using AWS... <span class="text-muted">Define your own systems!</span></h3>
+
+            <p class="lead">A web-based SSH console that executes commands on multiple shells. KeyBox allows you to
+                manage keys, share terminal commands, and upload files to multiple instances simultaneously</p>
+
+            <p><a class="btn btn-primary" href="javascript:window.open('https://github.com/skavanagh/KeyBox');"
+                  role="button">View on Github &raquo;</a></p>
+
+        </div>
+        <div class="col-md-5" style="float:left;">
+            <img class="featurette-image img-responsive" data-src="img/500x500/keybox.png/500x500/auto"
+                 src="img/500x500/keybox.png" alt="KeyBox: Web-based SSH console"/></img>
+        </div>
+    </div>
+
+
+    <hr class="featurette-divider">
+    <!-- /END THE FEATURETTES -->
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+        <table>
+            <tr>
+                <td>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=skavanagh&repo=EC2Box&type=watch&count=true&size=large"
+                            height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;"
+                            allowTransparency="true"></iframe>
+                </td>
+                <td>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=skavanagh&repo=EC2Box&type=fork&count=true&size=large"
+                            height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;"
+                            allowTransparency="true"></iframe>
+                </td>
+                <td>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=skavanagh&type=follow&count=true&size=large"
+                            height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;"
+                            allowTransparency="true"></iframe>
+                </td>
+            </tr>
+        </table>
+        </p>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>&copy; 2014 Sean Kavanagh</p>
+    </footer>
+
+</div>
+<!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="assets/js/docs.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#myCarousel').carousel();
+    });
+</script>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-38369800-1");
+        pageTracker._trackPageview();
+    } catch (err) {
+    }
+</script>
+</body>
 </html>

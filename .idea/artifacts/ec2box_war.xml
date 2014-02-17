@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ec2box:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="ec2box-0.08.01.war">
+      <element id="artifact" artifact-name="ec2box:war exploded" />
+    </root>
+  </artifact>
+</component>
